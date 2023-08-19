@@ -1,9 +1,13 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import LoginPage from "./Login";
 import NavBar from "./NavBar";
 
 function App() {
   const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    setUser(JSON.parse(sessionStorage.getItem("user")))
+  }, [])
 
   function handleLogin(user) {
     setUser(user);

@@ -8,6 +8,11 @@ import { Routes, Route } from "react-router-dom";
 import DashBoard from "./Dashboard";
 
 export default function NavBar({ user, handleLogout }) {
+
+  function handleClick(){
+    handleLogout()
+    sessionStorage.removeItem("user")
+  }
   return (
     <div className="flex flex-row">
       <div className="navbar bg-gray-900 w-1/6 h-screen overflow-hidden">
@@ -115,7 +120,7 @@ export default function NavBar({ user, handleLogout }) {
               {user ? (
                 <h1
                   className="font-bold text-xl self-end mx-2 cursor-pointer"
-                  onClick={() => handleLogout()}
+                  onClick={handleClick}
                 >
                   Logout
                 </h1>

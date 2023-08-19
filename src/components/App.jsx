@@ -11,7 +11,6 @@ function App() {
 
   function handleLogout() {
     setUser(null);
-    sessionStorage.removeItem(user);
   }
 
   return (

@@ -4,8 +4,10 @@ import { MdMenuOpen } from "react-icons/md";
 import { TbLicense } from "react-icons/tb";
 import { Link } from "react-router-dom";
 import { NavLink } from "@mantine/core";
+import { Routes, Route } from "react-router-dom";
+import DashBoard from "./Dashboard";
 
-export default function NavBar({ component: Component }) {
+export default function NavBar({ user, handleLogout }) {
   return (
     <div className="flex flex-row">
       <div className="navbar bg-gray-900 w-1/6 h-screen overflow-hidden">
@@ -102,17 +104,105 @@ export default function NavBar({ component: Component }) {
         <div className="top-section">
           <div className="flex flex-row justify-between px-10 my-2.5">
             <MdMenuOpen size={48} />
-            <h1 className="font-bold text-xl self-end mx-2">Welcome, User</h1>
+            {user ? (
+              <h1 className="font-bold text-xl self-end mx-2">
+                Welcome, {user.user["firstname"]}
+              </h1>
+            ) : null}
+            {/* <h1 className="font-bold text-xl self-end mx-2">Welcome, User</h1> */}
             <div className="user-menu flex flex-row">
               <FaUserGear size={48} className="mx-2" />
-              <h1 className="font-bold text-xl self-end mx-2 cursor-pointer">
-                Logout
-              </h1>
+              {user ? (
+                <h1
+                  className="font-bold text-xl self-end mx-2 cursor-pointer"
+                  onClick={() => handleLogout()}
+                >
+                  Logout
+                </h1>
+              ) : null}
             </div>
           </div>
           <hr className="border-zinc-900" />
         </div>
-        <div className="main-body px-11 py-5">{<Component />}</div>
+        <div className="main-body px-11 py-5">
+          {
+            <Routes>
+              <Route path="/" element={<DashBoard token={user.jwt} />} />
+              <Route
+                path="/users"
+                element={
+                  <h1 className="text-6xl text-rose-700 text-bold font-bold text-center mt-10">
+                    Users
+                  </h1>
+                }
+              />
+              <Route
+                path="/users/new"
+                element={
+                  <h1 className="text-6xl text-rose-700 text-bold font-bold text-center mt-10">
+                    Create New User
+                  </h1>
+                }
+              />
+              <Route
+                path="/licenses"
+                element={
+                  <h1 className="text-6xl text-rose-700 text-bold font-bold text-center mt-10">
+                    Licences
+                  </h1>
+                }
+              />
+              <Route
+                path="/licenses/new"
+                element={
+                  <h1 className="text-6xl text-rose-700 text-bold font-bold text-center mt-10">
+                    Create New Licence
+                  </h1>
+                }
+              />
+              <Route
+                path="/assets"
+                element={
+                  <h1 className="text-6xl text-rose-700 text-bold font-bold text-center mt-10">
+                    Assets
+                  </h1>
+                }
+              />
+              <Route
+                path="/assets/:id"
+                element={
+                  <h1 className="text-6xl text-rose-700 text-bold font-bold text-center mt-10">
+                    View Asset
+                  </h1>
+                }
+              />
+              <Route
+                path="/assets/new"
+                element={
+                  <h1 className="text-6xl text-rose-700 text-bold font-bold text-center mt-10">
+                    Create New Asset
+                  </h1>
+                }
+              />
+              <Route
+                path="/assets/assign"
+                element={
+                  <h1 className="text-6xl text-rose-700 text-bold font-bold text-center mt-10">
+                    Assign Assets
+                  </h1>
+                }
+              />
+              <Route
+                path="/assets/return"
+                element={
+                  <h1 className="text-6xl text-rose-700 text-bold font-bold text-center mt-10">
+                    Return Assets
+                  </h1>
+                }
+              />
+            </Routes>
+          }
+        </div>
       </div>
     </div>
   );

@@ -8,6 +8,7 @@ import { Routes, Route } from "react-router-dom";
 import DashBoard from "./Dashboard";
 import Licenses from "./Licenses";
 import NewLicenseForm from "./NewLicenseForm";
+import Users from "./Users";
 
 export default function NavBar({ user, handleLogout }) {
 
@@ -138,9 +139,7 @@ export default function NavBar({ user, handleLogout }) {
               <Route
                 path="/users"
                 element={
-                  <h1 className="text-6xl text-rose-700 text-bold font-bold text-center mt-10">
-                    Users
-                  </h1>
+                  <Users token={user.jwt} />
                 }
               />
               <Route

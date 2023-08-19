@@ -32,7 +32,7 @@ export default function NewLicenseForm({ token }) {
       if (res.ok) {
         res.json().then((data) => navigate("/licenses"));
       } else {
-        res.json().then((err) => setErrors(err.error));
+        res.json().then((err) => setErrors("You can't have an empty Form Field!"));
       }
     });
   }

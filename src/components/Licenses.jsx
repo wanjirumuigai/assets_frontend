@@ -79,7 +79,7 @@ export default function Licenses({token}) {
   }
 
   function onSubmitForm(e) {
-    // e.preventDefault();
+    e.preventDefault();
     fetch(`http://localhost:4000/licenses/${updateLicense.id}`, {
       method: "PATCH",
       headers: {
@@ -91,11 +91,7 @@ export default function Licenses({token}) {
     })
       .then((res) => res.json())
       .then((data) =>
-        setLicenses(
-          licenses.filter((license) =>
-            license.id === data.id ? data : license
-          )
-        )
+        handleUpdateLicense(data)
       )
       .catch((e) => console.log(e));
 
@@ -106,6 +102,18 @@ export default function Licenses({token}) {
       number_of_users: 1,
     });
     close();
+  }
+
+  function handleUpdateLicense(license){
+    const updatedLicenses = licenses.map(lic => {
+      if (lic.id === license.id){
+        return license
+      }
+      else{
+        return lic
+      }
+    })
+    setLicenses(updatedLicenses)
   }
 
   return (

@@ -9,6 +9,7 @@ import DashBoard from "./Dashboard";
 import Licenses from "./Licenses";
 import NewLicenseForm from "./NewLicenseForm";
 import Users from "./Users";
+import ViewUser from "./ViewUser";
 
 export default function NavBar({ user, handleLogout }) {
 
@@ -148,6 +149,12 @@ export default function NavBar({ user, handleLogout }) {
                   <h1 className="text-6xl text-rose-700 text-bold font-bold text-center mt-10">
                     Create New User
                   </h1>
+                }
+              />
+              <Route
+                path="/users/:id"
+                element={
+                  <ViewUser token={user.jwt}/>
                 }
               />
               <Route

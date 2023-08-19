@@ -20,6 +20,7 @@ const options = {
 const Users = ({ token }) => {
   const [users, setUsers] = useState([]);
   const [searchItems, setSearchItems] = useState([]);
+  const navigate = useNavigate()
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -62,13 +63,11 @@ const Users = ({ token }) => {
   }));
 
   function handleViewButton(id) {
-    // router.push(`/users/${id}`);
-    console.log(id);
+    navigate(`/users/${id}`);
   }
 
   function handleEdit(id) {
-    // router.push(`/users/edit/${id}`);
-    console.log(id);
+    navigate(`/users/edit/${id}`)
   }
 
   function handleSearch(e) {

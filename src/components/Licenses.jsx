@@ -11,11 +11,11 @@ import { styled } from "@mui/material/styles";
 import { Button } from "@mantine/core";
 import { FiEye } from "react-icons/fi";
 import { TbEdit } from "react-icons/tb";
-import Tooltip from "@mui/material/Tooltip";
 import { MdNoteAdd } from "react-icons/md";
 import { useDisclosure } from "@mantine/hooks";
 import { Modal } from "@mantine/core";
-import NewLicense from "./NewLicense";
+import Tooltip from "@mui/material/Tooltip";
+import UpdateLicenseForm from "./UpdateLicenseForm";
 
 export default function Licenses({token}) {
   const [licenses, setLicenses] = useState([]);
@@ -119,7 +119,7 @@ export default function Licenses({token}) {
   return (
     <>
       <Modal opened={opened} onClose={close} title="Update Licese">
-        <NewLicense
+        <UpdateLicenseForm
           formData={updateLicense}
           handleChange={handleChange}
           handleSubmit={onSubmitForm}

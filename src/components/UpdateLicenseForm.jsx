@@ -1,4 +1,4 @@
-export default function NewLicense({
+export default function UpdateLicenseForm({
   formData,
   handleChange,
   handleSubmit,

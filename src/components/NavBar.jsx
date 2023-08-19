@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import { NavLink } from "@mantine/core";
 import { Routes, Route } from "react-router-dom";
 import DashBoard from "./Dashboard";
-import NewLicense from "./NewLicense";
 import Licenses from "./Licenses";
 
 export default function NavBar({ user, handleLogout }) {
@@ -160,7 +159,7 @@ export default function NavBar({ user, handleLogout }) {
               <Route
                 path="/licenses/new"
                 element={
-                  <NewLicense />
+                  <h1>New License</h1>
                 }
               />
               <Route

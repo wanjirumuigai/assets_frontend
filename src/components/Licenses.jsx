@@ -131,7 +131,7 @@ export default function Licenses({token}) {
           <h1 className="main-heading text-4xl font-bold">
             License Management
           </h1>
-          <Link href={"/licenses/new"}>
+          <Link to="/licenses/new">
             <div className="title-and-number flex rounded bg-green-600 items-center p-1.5 cursor-pointer">
               <MdNoteAdd size={24} color="white" />
               <h1 className="text-2xl font-bold text-white">New License</h1>

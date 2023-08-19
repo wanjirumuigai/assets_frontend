@@ -7,6 +7,7 @@ import { NavLink } from "@mantine/core";
 import { Routes, Route } from "react-router-dom";
 import DashBoard from "./Dashboard";
 import Licenses from "./Licenses";
+import NewLicenseForm from "./NewLicenseForm";
 
 export default function NavBar({ user, handleLogout }) {
 
@@ -159,7 +160,7 @@ export default function NavBar({ user, handleLogout }) {
               <Route
                 path="/licenses/new"
                 element={
-                  <h1>New License</h1>
+                  <NewLicenseForm token={user.jwt}/>
                 }
               />
               <Route

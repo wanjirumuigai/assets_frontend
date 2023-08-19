@@ -10,6 +10,7 @@ import Licenses from "./Licenses";
 import NewLicenseForm from "./NewLicenseForm";
 import Users from "./Users";
 import ViewUser from "./ViewUser";
+import EditUser from "./EditUser"
 
 export default function NavBar({ user, handleLogout }) {
 
@@ -155,6 +156,12 @@ export default function NavBar({ user, handleLogout }) {
                 path="/users/:id"
                 element={
                   <ViewUser token={user.jwt}/>
+                }
+              />
+              <Route
+                path="/users/edit/:id"
+                element={
+                  <EditUser token={user.jwt}/>
                 }
               />
               <Route

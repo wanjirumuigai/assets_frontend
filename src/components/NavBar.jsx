@@ -12,6 +12,7 @@ import Users from "./Users";
 import ViewUser from "./ViewUser";
 import EditUser from "./EditUser"
 import NewUser from "./NewUser"
+import ListAssets from "./ListAssets";
 
 export default function NavBar({ user, handleLogout }) {
 
@@ -178,9 +179,7 @@ export default function NavBar({ user, handleLogout }) {
               <Route
                 path="/assets"
                 element={
-                  <h1 className="text-6xl text-rose-700 text-bold font-bold text-center mt-10">
-                    Assets
-                  </h1>
+                  <ListAssets user={user}/>
                 }
               />
               <Route

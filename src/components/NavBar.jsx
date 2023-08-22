@@ -14,6 +14,7 @@ import EditUser from "./EditUser"
 import NewUser from "./NewUser"
 import ListAssets from "./ListAssets";
 import ViewAsset from "./ViewAsset";
+import EditAsset from "./EditAsset";
 
 export default function NavBar({ user, handleLogout }) {
 
@@ -187,6 +188,12 @@ export default function NavBar({ user, handleLogout }) {
                 path="/assets/:id"
                 element={
                   <ViewAsset token={user.jwt} />
+                }
+              />
+              <Route
+                path="/assets/edit/:id"
+                element={
+                  <EditAsset token={user.jwt} />
                 }
               />
               <Route

@@ -97,7 +97,7 @@ export default function ListAssets({user}) {
   }
 
   function handleEdit() {
-    navigate(`/edit/${rowSelectionModel}`);
+    navigate(`/assets/edit/${rowSelectionModel}`);
   }
 
   // function handleAssign() {

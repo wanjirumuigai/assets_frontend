@@ -13,6 +13,7 @@ import ViewUser from "./ViewUser";
 import EditUser from "./EditUser"
 import NewUser from "./NewUser"
 import ListAssets from "./ListAssets";
+import ViewAsset from "./ViewAsset";
 
 export default function NavBar({ user, handleLogout }) {
 
@@ -185,9 +186,7 @@ export default function NavBar({ user, handleLogout }) {
               <Route
                 path="/assets/:id"
                 element={
-                  <h1 className="text-6xl text-rose-700 text-bold font-bold text-center mt-10">
-                    View Asset
-                  </h1>
+                  <ViewAsset token={user.jwt} />
                 }
               />
               <Route

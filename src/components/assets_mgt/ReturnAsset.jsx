@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useDisclosure } from "@mantine/hooks";
 import { DataGrid } from "@mui/x-data-grid";
-import SearchUser from "./SearchUser";
+import SearchUser from "../users/SearchUser";
 
 const options = {
   includeScore: true,

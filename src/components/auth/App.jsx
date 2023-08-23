@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import LoginPage from "./Login";
-import NavBar from "./NavBar";
+import LoginPage from "../auth/Login";
+import NavBar from "../navigation/NavBar";
 
 function App() {
   const [user, setUser] = useState(null);

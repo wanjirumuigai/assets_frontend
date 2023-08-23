@@ -6,18 +6,18 @@ import { Link } from "react-router-dom";
 import { NavLink } from "@mantine/core";
 import { Routes, Route } from "react-router-dom";
 import DashBoard from "./Dashboard";
-import Licenses from "./Licenses";
-import NewLicenseForm from "./NewLicenseForm";
-import Users from "./Users";
-import ViewUser from "./ViewUser";
-import EditUser from "./EditUser"
-import NewUser from "./NewUser"
-import ListAssets from "./ListAssets";
-import ViewAsset from "./ViewAsset";
-import EditAsset from "./EditAsset";
-import AddAsset from "./AddAsset";
-import AssignAsset from "./AssignAsset";
-import ReturnAsset from "./ReturnAsset";
+import Licenses from "../licenses/Licenses";
+import NewLicenseForm from "../licenses/NewLicenseForm";
+import Users from "../users/Users";
+import ViewUser from "../users/ViewUser";
+import EditUser from "../users/EditUser"
+import NewUser from "../users/NewUser"
+import ListAssets from "../assets_mgt/ListAssets";
+import ViewAsset from "../assets_mgt/ViewAsset";
+import EditAsset from "../assets_mgt/EditAsset";
+import AddAsset from "../assets_mgt/AddAsset";
+import AssignAsset from "../assets_mgt/AssignAsset";
+import ReturnAsset from "../assets_mgt/ReturnAsset";
 
 export default function NavBar({ user, handleLogout }) {
 

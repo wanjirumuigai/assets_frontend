@@ -199,8 +199,8 @@ const AssignAsset = ({ user }) => {
             assign_date: "",
             assigned_by: "",
           });
+          navigate("/assets")
         });
-        navigate("/assets")
       } else {
         res.json().then((err) => setErrors(err.errors));
       }

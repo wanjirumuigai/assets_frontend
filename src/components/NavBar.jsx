@@ -16,6 +16,7 @@ import ListAssets from "./ListAssets";
 import ViewAsset from "./ViewAsset";
 import EditAsset from "./EditAsset";
 import AddAsset from "./AddAsset";
+import AssignAsset from "./AssignAsset";
 
 export default function NavBar({ user, handleLogout }) {
 
@@ -206,9 +207,7 @@ export default function NavBar({ user, handleLogout }) {
               <Route
                 path="/assets/assign"
                 element={
-                  <h1 className="text-6xl text-rose-700 text-bold font-bold text-center mt-10">
-                    Assign Assets
-                  </h1>
+                  <AssignAsset user={user} />
                 }
               />
               <Route

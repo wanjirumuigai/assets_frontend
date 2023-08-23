@@ -200,6 +200,7 @@ const AssignAsset = ({ user }) => {
             assigned_by: "",
           });
         });
+        navigate("/assets")
       } else {
         res.json().then((err) => setErrors(err.errors));
       }

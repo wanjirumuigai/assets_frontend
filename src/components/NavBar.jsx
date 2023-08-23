@@ -17,6 +17,7 @@ import ViewAsset from "./ViewAsset";
 import EditAsset from "./EditAsset";
 import AddAsset from "./AddAsset";
 import AssignAsset from "./AssignAsset";
+import ReturnAsset from "./ReturnAsset";
 
 export default function NavBar({ user, handleLogout }) {
 
@@ -213,9 +214,7 @@ export default function NavBar({ user, handleLogout }) {
               <Route
                 path="/assets/return"
                 element={
-                  <h1 className="text-6xl text-rose-700 text-bold font-bold text-center mt-10">
-                    Return Assets
-                  </h1>
+                  <ReturnAsset currentUser={user} />
                 }
               />
             </Routes>
